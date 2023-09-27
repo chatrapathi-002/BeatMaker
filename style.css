@@ -1,0 +1,216 @@
+@import "./fonts/stylesheet.css";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  color: #fff;
+}
+
+body {
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  background-color: #1c1c1c;
+  position: relative;
+}
+
+.logo h1 {
+  text-align: center;
+}
+.container {
+  padding: 0.5rem 1rem;
+  margin: 0 auto;
+}
+
+i,
+svg {
+  pointer-events: none;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+}
+.logo > img {
+  width: 40px;
+  margin-right: 1.5rem;
+  filter: grayscale(1) invert(1);
+}
+.controls h1 {
+  width: 100px;
+}
+
+.kick-pad,
+.snare-pad,
+.hihat-pad,
+.perc-pad {
+  width: 3.5rem;
+  height: 3.5rem;
+  margin: 0.5rem;
+  cursor: pointer;
+}
+.pad {
+  transition: all 0.5s ease;
+}
+.kick-pad {
+  background: #8787f3;
+}
+
+.kick-pad.active {
+  background: #5757af;
+  border-radius: 5px;
+}
+.snare-pad {
+  background: rgb(233, 154, 140);
+}
+.snare-pad.active {
+  background: rgb(170, 78, 62);
+  border-radius: 5px;
+}
+.perc-pad {
+  background: rgb(233, 154, 140);
+}
+.perc-pad.active {
+  background: rgb(170, 78, 62);
+  border-radius: 5px;
+}
+
+.hihat-pad {
+  background: rgb(158, 236, 158);
+}
+.hihat-pad.active {
+  background: rgb(88, 173, 88);
+  border-radius: 5px;
+}
+
+.hihat-track,
+.snare-track,
+.kick-track,
+.perc-track {
+  margin-top: 3rem;
+}
+
+.sequencer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5rem 0;
+}
+.hihat,
+.kick,
+.snare,
+.perc {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  align-content: center;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex: 1;
+  margin: 0rem 2rem;
+  width: 100%;
+}
+
+.controls button {
+  background: rgb(88, 88, 88);
+  padding: 1rem;
+  border: none;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.5 ease;
+}
+
+.play {
+  padding: 1rem 1.5rem;
+  font-size: 1.5rem;
+  background: blue;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  align-self: center;
+}
+.play.active {
+  background: tomato;
+}
+
+select {
+  padding: 1rem;
+  font-size: 1.2rem;
+  margin-left: 1rem;
+  font-weight: bold;
+  width: 110px;
+  outline: none;
+}
+
+.mute.active {
+  background: #8787f3;
+}
+
+.footer {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 2rem;
+}
+
+@keyframes playTrack {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.2);
+  }
+}
+
+.tempo {
+  text-align: center;
+  width: 250px;
+  align-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.tempo-slider {
+  padding: 0.2rem;
+  border-radius: 1rem;
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  position: relative;
+  background-color: #d4bcbc;
+
+  cursor: pointer;
+  border-radius: 1rem;
+}
+.tempo p {
+  font-size: 1.3rem;
+  margin-left: 1rem;
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  .kick-track,
+  .snare-track,
+  .hihat-track,
+  .perc-track {
+    display: flex;
+    justify-content: space-evenly;
+    width: 70%;
+  }
+  h1 {
+    font-size: 3rem;
+  }
+}
